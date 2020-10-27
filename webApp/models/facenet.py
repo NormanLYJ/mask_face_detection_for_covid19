@@ -61,7 +61,7 @@ class FaceNet:
         loss = tf.reduce_sum(tf.maximum(basic_loss, 0.0))
 
         return loss
-        
+
     def samegroup(self, eye1,eye2):
         dx = min(eye1[0]+eye1[2], eye2[0]+eye1[2]) - max(eye1[0], eye2[0])
         dy = min(eye1[1]+eye1[3], eye2[1]+eye1[3]) - max(eye1[1], eye2[1])

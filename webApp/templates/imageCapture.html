@@ -66,6 +66,19 @@
                             <i class="fa fa-upload"></i> Send
                         </button>
                     </section>
+
+                    <section style="text-align:center;border:none; margin-top:20px;">
+                        <div id="processresultdiv" >
+                            <hr>
+                            <div class="form-group row">
+                                <div class="col col-md-3"><label style="font-size:12px;"><span>Detected Face</span></label></div>
+                                <div class="col col-md-3">
+                                    <img id="uploadFile_processed" width="70px"/>
+                                </div>
+                                <div class="col col-md-6 text-success">Face detected and encoded successfully, please proceed to <strong>Real Stream</strong> or <strong>Media Processing</strong> portion to test the model.</div>
+                            </div>
+                        </div>
+                    </section>
                 </article>
             </div>
         </div>
@@ -79,7 +92,7 @@
         $('#video').show();
         $('#captureImg').hide();
         m.init();
-    });;
+    });
 
     $('#capture').on('click', function() {
         var src = m.screenshot();
@@ -92,7 +105,8 @@
 
     $('#send').on('click', function() {
         var image = $("#captureImg").attr('src');
-        m.uploadImageFile(image);
+        username = prompt("pls enter a value:");
+        m.uploadImageFile(image, username);
     });
 
 </script>

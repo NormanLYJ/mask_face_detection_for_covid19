@@ -92,7 +92,9 @@
             //show detected face
             $('body').on('DOMSubtreeModified', '.progress-bar-success', function(data){
                 if ($('.progress-bar-success').length>0 && $('.progress-bar-success')[0].outerText =="Done") {
-                    var fileName = $('.file-footer-caption')[0].title
+                    var uploadfiles = $('.file-footer-caption');
+                    var fileName = $('.file-footer-caption')[uploadfiles.length - 1].title
+
                     var arr = fileName.split('.')
                     arr[0]=arr[0]+"_face"
                     var processedFileName = arr.join('.')
@@ -105,7 +107,9 @@
           $('body').on('DOMSubtreeModified', '.progress-bar-success', function(data){
               debugger
             if ($('.progress-bar-success').length>0 && $('.progress-bar-success')[0].outerText =="Done") {
-                var fileName = $('.file-footer-caption')[0].title
+                var uploadfiles = $('.file-footer-caption');
+                var fileName = $('.file-footer-caption')[uploadfiles.length - 1].title
+
                 var arr = fileName.split('.')
                 arr[0]=arr[0]+"_processed"
                 var processedFileName = arr.join('.')
